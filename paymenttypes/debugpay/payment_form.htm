@@ -1,3 +1,18 @@
 <p>It's for debugging purpose.</p>
-<button class="btn btn-success btn-lg">Pay with Success</button>
-<button class="btn btn-danger btn-lg">Pay with Error</button>
+<hr>
+{{ form_ajax('onPay') }}
+    <label for="" class="control-label">Type</label>
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+            <input name="status" type="radio" class="custom-control-input" value="success" required checked>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Success</span>
+        </label>
+        <label class="custom-control custom-radio">
+            <input name="status" type="radio" class="custom-control-input" value="error" required>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Error</span>
+        </label>
+    </div>
+    <button class="btn btn-primary" value="success">Pay Now</button>
+{{ form_close() }}
