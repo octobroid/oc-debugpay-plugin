@@ -1,2 +1,2 @@
-# oc-debugpay-plugin
-Plugin for debuggin Responsiv.Pay plugin
+# DebugPay Plugin
+Plugin for debugging payment on Responsiv.Pay.
