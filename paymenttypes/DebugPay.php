@@ -38,10 +38,12 @@ class DebugPay extends GatewayBase
                 $invoice->logPaymentAttempt('Successful payment', 1, [], null, null);
                 $invoice->markAsPaymentProcessed();
                 $invoice->updateInvoiceStatus('paid');
-                break;
+                return Redirect::to($invoice->getReceiptUrl())->with('success', true);
             case 'error':
                 $invoice->logPaymentAttempt('Unsuccessful payment', 0, [], null, null);
-                throw new ApplicationException('Error payment');
+                return Redirect::to($invoice->getReceiptUrl())->with('error', true);
         }
+
+        return Redirect::to($invoice->getReceiptUrl());
     }
 }
